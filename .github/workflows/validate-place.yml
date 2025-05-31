@@ -1,0 +1,41 @@
+name: Validate Place JSON
+
+on:
+  pull_request:
+    paths:
+      - 'data/**/*.json'
+      - 'schema/place.schema.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    name: Validate each Place in data/*.json
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli
+
+      - name: Split arrays and validate each object
+        run: |
+          for file in $(git diff --name-only origin/${{ github.base_ref }} | grep '^data/.*\.json$'); do
+            echo "Validating $file"
+
+            # Split JSON array into individual objects
+            jq -c '.[]' "$file" | nl -v 0 | while read -r line; do
+              number=$(echo "$line" | awk '{print $1}')
+              json=$(echo "$line" | cut -f2-)
+              echo "$json" > tmp.json
+
+              echo " → Entry #$number"
+              npx ajv validate -s place.schema.json -d tmp.json --strict=false || {
+                echo "❌ Invalid entry at index $number in $file"
+                exit 1
+              }
+            done
+          done
