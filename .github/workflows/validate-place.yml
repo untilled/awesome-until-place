@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - 'data/**/*.json'
-      - 'place.schema.json'
+      - 'schema/place.schema.json'
 
 jobs:
   validate-json:
