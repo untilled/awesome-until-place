@@ -8,12 +8,15 @@ const START_TAG = '<!-- PLACE_LIST_START -->'
 const END_TAG = '<!-- PLACE_LIST_END -->'
 
 function formatPlace(place) {
-  let result = `- **${place.name}** (${place.open_hours})\n`
+  const name = place.url
+    ? `[**${place.name}**](${place.url})`
+    : `**${place.name}**`
+
+  let result = `- ${name} (${place.open_hours})\n`
   result += `  - 📍 ${place.address}\n`
   if (place.description) result += `  - 📝 ${place.description}\n`
   result += `  - 📶 와이파이: ${place.wifi} ｜ 🔌 콘센트: ${place.power} ｜ 💺 좌석: ${place.seat_count}\n`
   result += `  - 🚻 화장실: ${place.restroom}\n`
-  if (place.url) result += `  - 🔗 [링크](${place.url})\n`
   if (place.images && place.images.length > 0) {
     result += `  - 🖼️ 이미지:\n`
     place.images.forEach((img, i) => {
