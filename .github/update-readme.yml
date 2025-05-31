@@ -1,0 +1,34 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - 'data/**/*.json'
+      - 'scripts/update-readme.js'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (if needed)
+        run: npm install --omit=dev || true
+
+      - name: Run README updater
+        run: node scripts/update-readme.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "docs: auto-update README with latest place data" || echo "No changes"
+          git push
