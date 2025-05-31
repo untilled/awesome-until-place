@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # ✅ 전체 이력 fetch 필요
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -38,7 +38,7 @@ jobs:
               echo "$json" > tmp.json
 
               echo " → Entry #$number"
-              npx ajv validate -s schema/place.schema.json -d tmp-entry.json --formats || {
+              npx ajv validate -s schema/place.schema.json -d tmp.json --strict=false || {
                 echo "❌ Invalid entry at index $number in $file"
                 exit 1
               }
