@@ -11,17 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     name: Validate each Place in data/*.json
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      - name: Install ajv-cli
-        run: npm install -g ajv-cli
+      - name: Install ajv-cli and jq
+        run: |
+          npm install -g ajv-cli
+          sudo apt-get install -y jq
 
-      - name: Split arrays and validate each object
+      - name: Validate Place entries
         run: |
           for file in $(git diff --name-only origin/${{ github.base_ref }} | grep '^data/.*\.json$'); do
             echo "Validating $file"
@@ -33,7 +38,7 @@ jobs:
               echo "$json" > tmp.json
 
               echo " → Entry #$number"
-              npx ajv validate -s place.schema.json -d tmp.json --strict=false || {
+              npx ajv validate -s schema/place.schema.json -d tmp.json --strict=false || {
                 echo "❌ Invalid entry at index $number in $file"
                 exit 1
               }
