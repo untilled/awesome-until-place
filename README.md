@@ -1,9 +1,9 @@
-# 🌟 Awesome Until Place
+# Awesome Until Place
 
 🪑 개발자, 프리랜서, 디자이너 등을 위한 **작업하기 좋은 카페 / 코워킹 스페이스** 리스트입니다.  
 🙌 누구나 PR로 직접 장소를 추가할 수 있어요!
 
-## 📌 목적
+## 목적
 
 - 콘센트, 와이파이, 조용함 등 **작업에 적합한 장소**를 모읍니다.
 - 오픈소스 기여 방식으로 누구나 쉽게 참여할 수 있게 합니다.
@@ -33,11 +33,17 @@
 - 💺 조용한 분위기 (시끄러운 브런치 카페 등 제외)
 - ❌ 프랜차이즈는 기준 미달 시 제외될 수 있음
 
-## 🙋‍♀️ 기여 방법 (How to Contribute)
+## 기여 방법 (How to Contribute)
 
 기여 전에는 `CONTRIBUTING.md` 를 참고해주세요!
 
-## 📃 라이선스
+## 기여자
+
+<a href="https://github.com/untilled/awesome-until-place/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=untilled/awesome-until-place" />
+</a>
+
+## 라이선스
 
 이 프로젝트는 [MIT License](LICENSE)를 따릅니다.  
 자유롭게 사용하실 수 있으며, **출처 표기를 부탁드립니다.**
