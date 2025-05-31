@@ -2,7 +2,18 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Place",
   "type": "object",
-  "required": ["name", "address", "lat", "lng", "wifi", "power", "quiet"],
+  "required": [
+    "name",
+    "address",
+    "lat",
+    "lng",
+    "wifi",
+    "power",
+    "seat_count",
+    "open_hours",
+    "url",
+    "restroom"
+  ],
   "properties": {
     "name": {
       "type": "string",

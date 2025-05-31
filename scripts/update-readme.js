@@ -8,12 +8,19 @@ const START_TAG = '<!-- PLACE_LIST_START -->'
 const END_TAG = '<!-- PLACE_LIST_END -->'
 
 function formatPlace(place) {
-  return `- **${place.name}**  
-  주소: ${place.address}  
-  와이파이: ${place.wifi} ｜ 콘센트: ${place.power} ｜ 좌석: ${
-    place.seat_count
-  } ｜ 조용함: ${place.quiet ? '✅' : '❌'}  
-  [링크](${place.url || '#'})`
+  let result = `- **${place.name}** (${place.open_hours})\n`
+  result += `  - 📍 ${place.address}\n`
+  if (place.description) result += `  - 📝 ${place.description}\n`
+  result += `  - 📶 와이파이: ${place.wifi} ｜ 🔌 콘센트: ${place.power} ｜ 💺 좌석: ${place.seat_count}\n`
+  result += `  - 🚻 화장실: ${place.restroom}\n`
+  if (place.url) result += `  - 🔗 [링크](${place.url})\n`
+  if (place.images && place.images.length > 0) {
+    result += `  - 🖼️ 이미지:\n`
+    place.images.forEach((img, i) => {
+      result += `    - ![이미지${i + 1}](${img})\n`
+    })
+  }
+  return result
 }
 
 function generatePlaceSection() {
@@ -24,11 +31,18 @@ function generatePlaceSection() {
   for (const file of files) {
     const region = path.basename(file, '.json')
     const filePath = path.join(DATA_DIR, file)
-    const places = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    let places
+    try {
+      places = JSON.parse(raw)
+    } catch (e) {
+      console.error(`❌ JSON 파싱 오류: ${filePath}`)
+      continue
+    }
 
     section += `\n### ${region}\n`
     places.forEach((place) => {
-      section += `${formatPlace(place)}\n\n`
+      section += `${formatPlace(place)}\n`
     })
   }
 
@@ -39,11 +53,11 @@ function updateReadme() {
   const original = fs.readFileSync(README_PATH, 'utf-8')
   const section = generatePlaceSection()
 
-  const [before, , after] = original.split(
-    new RegExp(`${START_TAG}[\\s\\S]*?${END_TAG}`, 'm')
+  const newContent = original.replace(
+    new RegExp(`${START_TAG}[\\s\\S]*?${END_TAG}`, 'm'),
+    `${START_TAG}\n\n${section}\n\n${END_TAG}`
   )
 
-  const newContent = `${before}${START_TAG}\n${section}\n${END_TAG}${after}`
   fs.writeFileSync(README_PATH, newContent)
   console.log('✅ README.md updated with place section!')
 }
