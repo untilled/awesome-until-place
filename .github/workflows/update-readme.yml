@@ -5,6 +5,8 @@ on:
     paths:
       - 'data/**/*.json'
       - 'scripts/update-readme.js'
+    branches:
+      - main
 
 jobs:
   update-readme:
