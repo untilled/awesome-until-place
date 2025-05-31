@@ -38,7 +38,7 @@ jobs:
               echo "$json" > tmp.json
 
               echo " → Entry #$number"
-              npx ajv validate -s place.schema.json -d tmp.json --strict=false || {
+              npx ajv validate -s schema/place.schema.json -d tmp.json --strict=false || {
                 echo "❌ Invalid entry at index $number in $file"
                 exit 1
               }
