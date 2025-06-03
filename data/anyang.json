@@ -12,5 +12,19 @@
     "url": "https://naver.me/F9N4TWZ5",
     "restroom": "실내/남녀 공용",
     "images": []
+  },
+  {
+    "name": "카페채움",
+    "description": "빌라 한 채를 통째로 카페로 개조한 곳으로, 아늑하고 조용한 분위기에서 커피를 즐길 수 있습니다.",
+    "address": "경기 안양시 동안구 관평로336번길 72 1, 2층",
+    "lat": 37.403817,
+    "lng": 126.957877,
+    "wifi": "빠름",
+    "power": "보통",
+    "seat_count": "보통",
+    "open_hours": "11:00 - 21:00",
+    "url": "https://naver.me/5UEFcJPO",
+    "restroom": "실내/남녀 공용",
+    "images": []
   }
 ]
