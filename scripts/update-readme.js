@@ -31,7 +31,6 @@ function generatePlaceSection() {
 
   let section = ''
 
-  // ⏱️ 현재 시간 구하기 (KST 기준)
   const now = new Date()
   const updatedAt = new Intl.DateTimeFormat('ko-KR', {
     dateStyle: 'full',
@@ -39,8 +38,7 @@ function generatePlaceSection() {
     timeZone: 'Asia/Seoul',
   }).format(now)
 
-  // 시작 문구 추가
-  section += `> data에 정보가 추가되면 해당 영역이 자동으로 갱신됩니다. (마지막 갱신일: ${updatedAt})\n\n`
+  section += `> [data](data)에 의해 자동으로 갱신됩니다. (갱신일: ${updatedAt})\n\n`
 
   for (const file of files) {
     const region = path.basename(file, '.json')
