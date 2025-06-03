@@ -38,7 +38,7 @@ function generatePlaceSection() {
     timeZone: 'Asia/Seoul',
   }).format(now)
 
-  section += `> [data](data)에 의해 자동으로 갱신됩니다. (갱신일: ${updatedAt})\n\n`
+  section += `> 마지작 수정일: ${updatedAt})\n\n`
 
   for (const file of files) {
     const region = path.basename(file, '.json')
