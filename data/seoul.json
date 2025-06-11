@@ -12,5 +12,19 @@
     "url": "https://naver.me/GNWk2fBF",
     "restroom": "실내/남녀 구분",
     "images": []
+  },
+  {
+    "name": "카페 가비애",
+    "description": "사장님이 카공하라고 만든 24시간 카페, 1인 1콘센트 가능한 카페",
+    "address": "서울 마포구 와우산로 147-1 1층과 2층",
+    "lat": 37.554445,
+    "lng": 126.929570,
+    "wifi": "빠름",
+    "power": "많음",
+    "seat_count": "보통",
+    "open_hours": "00:00 - 24:00",
+    "url": "https://naver.me/xL1J9CIo",
+    "restroom": "실외/남녀 구분",
+    "images": []
   }
 ]
