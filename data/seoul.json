@@ -40,5 +40,19 @@
     "url": "https://map.naver.com/p/entry/place/1039964443?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511181438&locale=ko&svcName=map_pcv5",
     "restroom": "실내/남녀 구분",
     "images": []
+  },
+  {
+    "name": "카페 비플랫",
+    "description": "창가쪽 1인석 있음 콘센트는 0.7인마다 하나씩 수준인듯, 그 외 테이블 몇개 있지만 카공 외에도 조금 있음",
+    "address": "서울 강서구 곰달래로 88 1층",
+    "lat": 37.530110,
+    "lng": 126.842656,
+    "wifi": "빠름",
+    "power": "보통",
+    "seat_count": "적음",
+    "open_hours": "화-금 11:00 - 01:00, 토 10:00 - 01:00, 월 11:00 - 01:00, 일 10:00 - 01:00",
+    "url": "https://naver.me/IGJyhGUS",
+    "restroom": "실외(지하1층), 남녀 구분",
+    "images": []
   }
 ]
