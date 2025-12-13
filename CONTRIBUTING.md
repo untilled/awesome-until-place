@@ -24,8 +24,6 @@
   "name": "카페 시그널 강남",
   "description": "커피 맛이 좋고, 좌석이 넉넉하며, 조용한 분위기.",
   "address": "서울 강남구 테헤란로 123",
-  "lat": 37.123456,
-  "lng": 127.123456,
   "wifi": "빠름",
   "power": "보통",
   "seat_count": "보통",
@@ -36,7 +34,7 @@
 }
 ```
 
-> 필수 항목: `name`, `address`, `lat`, `lng`, `wifi`, `power`, `seat_count`, `open_hours`, `url`, `restroom`
+> 필수 항목: `name`, `address`, `wifi`, `power`, `seat_count`, `open_hours`, `url`, `restroom`
 
 4. PR(Pull Request)을 보내주세요!
 
