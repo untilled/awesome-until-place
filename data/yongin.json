@@ -9,6 +9,8 @@
     "open_hours": "00:00 - 23:59",
     "url": "https://naver.me/F6lTUhYM",
     "restroom": "실내/남녀 구분",
-    "images": []
+    "images": [],
+    "lat": 37.2740688117767,
+    "lng": 127.070491899511
   }
 ]

@@ -12,5 +12,47 @@
     "url": "https://naver.me/GNWk2fBF",
     "restroom": "실내/남녀 구분",
     "images": []
+  },
+  {
+    "name": "카페 가비애",
+    "description": "사장님이 카공하라고 만든 24시간 카페, 1인 1콘센트 가능한 카페",
+    "address": "서울 마포구 와우산로 147-1 1층과 2층",
+    "lat": 37.554445,
+    "lng": 126.929570,
+    "wifi": "빠름",
+    "power": "많음",
+    "seat_count": "보통",
+    "open_hours": "00:00 - 24:00",
+    "url": "https://naver.me/xL1J9CIo",
+    "restroom": "실외/남녀 구분",
+    "images": []
+  },
+  {
+    "name": "카페07772",
+    "description": "2층 3층 카공하는 사람 많음.",
+    "address": "서울 강서구 곰달래로 69",
+    "lat": 37.530277,
+    "lng": 126.840337,
+    "wifi": "빠름",
+    "power": "많음",
+    "seat_count": "보통",
+    "open_hours": "화-월 08:30-24:00 (토-일 09:30-24:00)",
+    "url": "https://map.naver.com/p/entry/place/1039964443?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511181438&locale=ko&svcName=map_pcv5",
+    "restroom": "실내/남녀 구분",
+    "images": []
+  },
+  {
+    "name": "카페 비플랫",
+    "description": "창가쪽 1인석 있음 콘센트는 0.7인마다 하나씩 수준인듯, 그 외 테이블 몇개 있지만 카공 외에도 조금 있음",
+    "address": "서울 강서구 곰달래로 88 1층",
+    "lat": 37.530110,
+    "lng": 126.842656,
+    "wifi": "빠름",
+    "power": "보통",
+    "seat_count": "적음",
+    "open_hours": "화-금 11:00 - 01:00, 토 10:00 - 01:00, 월 11:00 - 01:00, 일 10:00 - 01:00",
+    "url": "https://naver.me/IGJyhGUS",
+    "restroom": "실외(지하1층), 남녀 구분",
+    "images": []
   }
 ]
