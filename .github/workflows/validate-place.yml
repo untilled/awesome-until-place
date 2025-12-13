@@ -3,8 +3,12 @@ name: Validate Place JSON
 on:
   pull_request:
     paths:
-      - 'data/**/*.json'
-      - 'schema/place.schema.json'
+      - "data/**/*.json"
+      - "schema/place.schema.json"
+  workflow_run:
+    workflows: ["Fill Coordinates from Address"]
+    types:
+      - completed
 
 jobs:
   validate-json:
@@ -19,7 +23,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install ajv-cli and jq
         run: |

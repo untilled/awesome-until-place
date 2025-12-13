@@ -28,7 +28,12 @@ jobs:
         env:
           KAKAO_API_KEY: ${{ secrets.KAKAO_API_KEY }}
         run: |
+          set -e
           node scripts/fill-coordinates.js
+          if [ $? -ne 0 ]; then
+            echo "❌ Failed to fill coordinates"
+            exit 1
+          fi
 
       - name: Check for changes
         id: check_changes

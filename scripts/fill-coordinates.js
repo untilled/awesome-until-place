@@ -34,10 +34,6 @@ async function getCoordinatesFromAddress(address) {
 
         res.on('end', () => {
           try {
-            console.log('api success')
-
-            console.log(data)
-
             const json = JSON.parse(data)
 
             if (json.documents && json.documents.length > 0) {
